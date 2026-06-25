@@ -1,0 +1,24 @@
+#What is the goal of your workflow
+#Goal: Whenever someone changes the python code, the linter will check if the syntax, format, indentation (Linting) is correct or not 
+
+name: Auto Linter
+
+#when some push code over github for this project changing the .py file then only run this pipeline.
+on: 
+  push: 
+    # Run only when there are changes on .py file
+    paths: "*.py"
+
+jobs:
+  code:
+    # Use ubuntu image to run the steps and then delete the ubuntu image
+    runs-on: ubuntu-latest
+    steps:
+      #This step clones your repository content 
+      # Got this step from github action ("https://github.com/actions/checkout") for git clone
+      - name: Checkout/Clone the code
+        uses: actions/checkout@v7 
+
+      # This step will install the liniting tool
+      - name: Install Linter
+        run: pip install ruff
