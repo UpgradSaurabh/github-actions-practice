@@ -18,6 +18,14 @@ jobs:
       # Got this step from github action ("https://github.com/actions/checkout") for git clone
       - name: Checkout/Clone the code
         uses: actions/checkout@v7 
+        
+      #This step will install python (Adding this step for practice) 
+      - name: installing python
+        uses: actions/setup-pyhton@v5 
+        with:
+          python-version: '3.11' # Specify your required version
+          cache: 'pip'           # Automatically caches your pip dependencies
+          
 
       # This step will install the liniting tool
       - name: Install Linter
