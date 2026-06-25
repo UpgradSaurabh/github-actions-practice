@@ -3,7 +3,7 @@
 
 name: Auto Linter
 
-#when some push code over github for this project changing the .py file then only run this pipeline.
+# When some push code over github for this project changing the .py file then only run this pipeline.
 on: 
   push: 
     # Run only when there are changes on .py file
