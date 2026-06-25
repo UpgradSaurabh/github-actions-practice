@@ -22,3 +22,7 @@ jobs:
       # This step will install the liniting tool
       - name: Install Linter
         run: pip install ruff
+
+      - name: 
+      # Lint the entire current directory
+        run: ruff check .
